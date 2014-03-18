@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\todo\Controllers;
+namespace bundles\todo\Controllers;
 
 /**
  * Todo HomeController
@@ -28,7 +28,7 @@ class HomeController extends \Library\Core\Auth {
     public function readAction()
     {
         if (isset($this->_params['idtodo']) && intval($this->_params['idtodo']) > 0) {
-            $oTodoModel = new \modules\backend\Models\Todo(intval($this->_params['idtodo']), $this->oUser);
+            $oTodoModel = new \bundles\backend\Models\Todo(intval($this->_params['idtodo']), $this->oUser);
             $oTodo = $oTodoModel->getEntity();
             if (! is_null($oTodo) && $oTodo->isLoaded()) {
                 $this->_view['oTodo'] = $oTodo;
@@ -41,7 +41,7 @@ class HomeController extends \Library\Core\Auth {
     public function updateAction()
     {
         if (isset($this->_params['idtodo']) && intval($this->_params['idtodo']) > 0) {
-            $oTodoModel = new \modules\backend\Models\Todo(intval($this->_params['idtodo']), $this->oUser);
+            $oTodoModel = new \bundles\backend\Models\Todo(intval($this->_params['idtodo']), $this->oUser);
             $oTodo = $oTodoModel->getEntity();
             if (! is_null($oTodo) && $oTodo->isLoaded()) {
                 $this->_view['oTodo'] = $oTodo;

@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\backend\Models;
+namespace bundles\backend\Models;
 
 class Todo extends \Library\Core\Crud {
 
