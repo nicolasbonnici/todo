@@ -57,10 +57,10 @@ $(document).ready(function() {
                  <button type="button" class="ui-reload btn btn-lg btn-default">
                      <span class="glyphicon glyphicon-refresh"></span> Raffraichir
                  </button>
-				 <button  href="#modal-todo" type="button" class="hide btn btn-lg btn-danger ui-sendxhr ui-delete-todos" data-url="/backend/todo/delete/" data-selector="#modal-create-content" role="button" data-toggle="modal">
+				 <button  href="#modal-todo" type="button" class="hide btn btn-lg btn-danger ui-sendxhr ui-delete-todos" data-url="/todo/home/delete/" data-selector="#modal-create-content" role="button" data-toggle="modal">
 				    <span class="glyphicon glyphicon-trash"></span> Supprimer
 				 </button> 
-				 <button  href="#modal-todo" type="button" class="btn btn-lg btn-info ui-sendxhr" data-url="/backend/todo/create/" data-selector="#modal-todo-content" role="button" data-toggle="modal">
+				 <button  href="#modal-todo" type="button" class="btn btn-lg btn-info ui-sendxhr" data-url="/todo/home/create/" data-selector="#modal-todo-content" role="button" data-toggle="modal">
 				    <span class="glyphicon glyphicon-file"></span> New todo!
 				 </button> 
 			</div>
@@ -82,7 +82,7 @@ $(document).ready(function() {
                         </th>
 					</tr>
 				</thead>
-				<tbody id="todoList" class="ui-loadable" data-entity="Todo" data-view="todo/list.tpl" data-parameters="" data-module="crud" data-controller="home" data-action="listByUser">
+				<tbody id="todoList" class="ui-loadable" data-entity="Todo" data-view="todo/list.tpl" data-parameters="" data-bundle="crud" data-controller="home" data-action="listByUser">
 
 				</tbody>
 			</table>

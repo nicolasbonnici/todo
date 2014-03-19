@@ -8,7 +8,7 @@
 	         </h1>
 	    </div>
 	    <div class="modal-body">
-	        <form role="form" data-entity="Todo" data-pk="{{oTodo.idtodo}}" id="updateTodoForm" action="/backend/crud/update/" method="post">
+	        <form role="form" data-entity="Todo" data-pk="{{oTodo.idtodo}}" id="updateTodoForm" action="/crud/home/update/" method="post">
 	            <div class="form-group">
 	                <label>Deadline</label>
 	                <a class="ui-editable bold" data-type="combodate" data-template="D MMM YYYY  HH:mm" data-format="YYYY-MM-DD HH:mm" data-viewformat="MMM D, YYYY, HH:mm" data-entity="Todo" data-pk="" data-url="">
