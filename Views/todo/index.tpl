@@ -82,7 +82,7 @@ $(document).ready(function() {
                         </th>
 					</tr>
 				</thead>
-				<tbody id="todoList" class="ui-loadable" data-entity="Todo" data-view="todo/list.tpl" data-parameters="" data-bundle="crud" data-controller="home" data-action="listByUser">
+				<tbody id="todoList" class="ui-loadable" data-entity="Todo" data-view="todo/list.tpl" data-parameters="" data-bundle="crud" data-controller="list" data-action="listByUser">
 
 				</tbody>
 			</table>

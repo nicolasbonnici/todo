@@ -5,7 +5,7 @@
     </h4>
 </div>
 <div class="modal-body">
-    <form id="deleteTodo" class="text-center" method="post" action="/crud/home/delete/" data-entity="Todo" data-pk="{% if pk|Exists %}{{pk}}{% endif %}">
+    <form id="deleteTodo" class="text-center" method="post" action="/crud/delete/" data-entity="Todo" data-pk="{% if pk|Exists %}{{pk}}{% endif %}">
        <div class="form-group">
             <label>Confirmez vous la suppréssion de ce todo?</label>
             <input type="hidden" name="bconfirm" value="1" />

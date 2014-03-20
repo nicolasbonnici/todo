@@ -7,7 +7,7 @@
   </div>
   
   <div id="modal-create-content" class="modal-body">
-	<form role="form" id="newTodoForm" action="/backend/crud/create/" data-entity="Todo" data-view="crud/create.tpl" method="post">
+	<form role="form" id="newTodoForm" action="/crud/create/" data-entity="Todo" data-view="crud/create.tpl" method="post">
 	    <div class="form-group">
 	        <label>Titre du Todo</label>
             <input type="text" name="label" class="form-control input-lg" placeholder="Entrez le titre de votre post" value="{% if title|Exists %}{{title}}{% endif %}" />
