@@ -1,5 +1,4 @@
 <?php
-
 namespace bundles\todo\Controllers;
 
 /**
@@ -9,11 +8,14 @@ namespace bundles\todo\Controllers;
  *
  * @author info
  */
-class HomeController extends \Library\Core\Auth {
+class HomeController extends \Library\Core\Auth
+{
 
-    public function __preDispatch() {}
+    public function __preDispatch()
+    {}
 
-    public function __postDispatch() {}
+    public function __postDispatch()
+    {}
 
     public function indexAction()
     {
@@ -33,7 +35,6 @@ class HomeController extends \Library\Core\Auth {
             if (! is_null($oTodo) && $oTodo->isLoaded()) {
                 $this->_view['oTodo'] = $oTodo;
             }
-
         }
         $this->render('todo/read.tpl');
     }
@@ -46,7 +47,6 @@ class HomeController extends \Library\Core\Auth {
             if (! is_null($oTodo) && $oTodo->isLoaded()) {
                 $this->_view['oTodo'] = $oTodo;
             }
-
         }
         $this->render('todo/update.tpl');
     }
@@ -58,8 +58,9 @@ class HomeController extends \Library\Core\Auth {
         }
         $this->render('todo/delete.tpl');
     }
-
 }
 
-class TodoControllerException extends \Exception {}
+class TodoControllerException extends \Exception
+{
+}
 ?>
