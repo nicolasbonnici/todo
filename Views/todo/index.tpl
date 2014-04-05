@@ -36,7 +36,7 @@ $(document).ready(function() {
     <div class="col-md-12 column">
         <div class="page-header">
             <h1 class="showOnHover">
-                <img src="/lib/bundles/todo/icon.png" alt="App icon" />Todo! <small class="targetToShow">1.0</small>
+                <img src="/lib/bundles/todo/img/icon.png" alt="App icon" />Todo! <small class="targetToShow">1.0</small>
             </h1>
         </div>
     </div>
