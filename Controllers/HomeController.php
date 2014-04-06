@@ -29,11 +29,11 @@ class HomeController extends \Library\Core\Auth
 
     public function readAction()
     {
-        if (isset($this->_params['idtodo']) && intval($this->_params['idtodo']) > 0) {
-            $oTodoModel = new \bundles\todo\Models\Todo(intval($this->_params['idtodo']), $this->oUser);
+        if (isset($this->aParams['idtodo']) && intval($this->aParams['idtodo']) > 0) {
+            $oTodoModel = new \bundles\todo\Models\Todo(intval($this->aParams['idtodo']), $this->oUser);
             $oTodo = $oTodoModel->getEntity();
             if (! is_null($oTodo) && $oTodo->isLoaded()) {
-                $this->_view['oTodo'] = $oTodo;
+                $this->aView['oTodo'] = $oTodo;
             }
         }
         $this->render('todo/read.tpl');
@@ -41,11 +41,11 @@ class HomeController extends \Library\Core\Auth
 
     public function updateAction()
     {
-        if (isset($this->_params['idtodo']) && intval($this->_params['idtodo']) > 0) {
-            $oTodoModel = new \bundles\todo\Models\Todo(intval($this->_params['idtodo']), $this->oUser);
+        if (isset($this->aParams['idtodo']) && intval($this->aParams['idtodo']) > 0) {
+            $oTodoModel = new \bundles\todo\Models\Todo(intval($this->aParams['idtodo']), $this->oUser);
             $oTodo = $oTodoModel->getEntity();
             if (! is_null($oTodo) && $oTodo->isLoaded()) {
-                $this->_view['oTodo'] = $oTodo;
+                $this->aView['oTodo'] = $oTodo;
             }
         }
         $this->render('todo/update.tpl');
@@ -53,8 +53,8 @@ class HomeController extends \Library\Core\Auth
 
     public function deleteAction()
     {
-        if (isset($this->_params['pk']) && intval($this->_params['pk']) > 0) {
-            $this->_view['pk'] = $this->_params['pk'];
+        if (isset($this->aParams['pk']) && intval($this->aParams['pk']) > 0) {
+            $this->aView['pk'] = $this->aParams['pk'];
         }
         $this->render('todo/delete.tpl');
     }
