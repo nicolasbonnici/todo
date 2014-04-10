@@ -5,19 +5,7 @@ meta_description %} {% block js %}
 <script type="text/javascript" src="/lib/plugins/summernote/js/summernote.js"></script>
 <script type="text/javascript" src="/lib/plugins/moment/js/moment.min.js"></script>
 <script type="text/javascript" src="/lib/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    // Show the delete btn for several checked checkbox
-    $('body').on('.ui-select.todos', 'click', function() {
-       alert($('.ui-select.todos:checked').size());
-       if ($('.ui-select.todos:checked').size() > 1) {
-           $('.ui-delete-todos').removeClass('hide');
-       } else {
-           $('.ui-delete-todos').addClass('hide');
-       }
-    });
-});
-</script>
+
 {% endblock %} {% block css %}
 <link href="/lib/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link href="/lib/plugins/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet">
@@ -47,11 +35,11 @@ $(document).ready(function() {
                     <span class="glyphicon glyphicon-refresh"></span> Raffraichir
                 </button>
                 <button href="#modal-todo" type="button" class="hide btn btn-lg btn-danger ui-sendxhr ui-delete-todos"
-                    data-url="/todo/home/delete/" data-selector="#modal-create-content" role="button" data-toggle="modal">
+                    data-url="/todo/todos/delete/" data-selector="#modal-create-content" role="button" data-toggle="modal">
                     <span class="glyphicon glyphicon-trash"></span> Supprimer
                 </button>
                 <button href="#modal-todo" type="button" class="btn btn-lg btn-info ui-sendxhr"
-                    data-url="/todo/home/create/" data-selector="#modal-todo-content" role="button" data-toggle="modal">
+                    data-url="/todo/todo/create/" data-selector="#modal-todo-content" role="button" data-toggle="modal">
                     <span class="glyphicon glyphicon-file"></span> New todo!
                 </button>
             </div>
