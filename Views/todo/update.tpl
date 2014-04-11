@@ -26,7 +26,7 @@
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-lg btn-default" data-dismiss="modal">{{tr['cancel']}}</button>
-    <button type="button" class="btn btn-lg btn-primary ui-sendform refreshOnCallback sendNotificationOnCallback"
+    <button type="button" class="btn btn-lg btn-primary ui-sendform loadOnCallback sendNotificationOnCallback" data-load-selector="#todoList"
         data-form="#updateTodoForm">{{tr['save']}}</button>
 </div>
 {% endif %}

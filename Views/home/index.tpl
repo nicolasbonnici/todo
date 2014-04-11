@@ -46,8 +46,10 @@ meta_description %} {% block js %}
             <table id="todo-last-items" class="table table-responsive">
                 <thead>
                     <tr>
-                        <th><input type="checkbox" class="ui-select-all ui-toggle"
-                            data-toggle-selector=".ui-delete-todos" data-checkbox-class="todos"
+                        <th><input type="checkbox" class="ui-select-all"
+                            data-delete-selector=".ui-delete-todos" 
+                            data-checkbox-class="todos" 
+                            data-select-parent="#todoList" 
                             data-container="#todo-last-items" /></th>
                         <th>
                             <h3>Title</h3>
