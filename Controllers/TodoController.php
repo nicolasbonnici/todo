@@ -19,12 +19,12 @@ class TodoController extends \Library\Core\Auth
 
     public function indexAction()
     {
-        $this->render('todo/index.tpl');
+        $this->oView->render($this->aView, 'todo/index.tpl');
     }
 
     public function createAction()
     {
-        $this->render('todo/create.tpl');
+        $this->oView->render($this->aView, 'todo/create.tpl');
     }
 
     public function readAction()
@@ -36,7 +36,7 @@ class TodoController extends \Library\Core\Auth
                 $this->aView['oTodo'] = $oTodo;
             }
         }
-        $this->render('todo/read.tpl');
+        $this->oView->render($this->aView, 'todo/read.tpl');
     }
 
     public function updateAction()
@@ -48,7 +48,7 @@ class TodoController extends \Library\Core\Auth
                 $this->aView['oTodo'] = $oTodo;
             }
         }
-        $this->render('todo/update.tpl');
+        $this->oView->render($this->aView, 'todo/update.tpl');
     }
 
     public function deleteAction()
@@ -56,7 +56,7 @@ class TodoController extends \Library\Core\Auth
         if (isset($this->aParams['pk']) && intval($this->aParams['pk']) > 0) {
             $this->aView['pk'] = $this->aParams['pk'];
         }
-        $this->render('todo/delete.tpl');
+        $this->oView->render($this->aView, 'todo/delete.tpl');
     }
 }
 

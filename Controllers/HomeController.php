@@ -8,7 +8,7 @@ namespace bundles\todo\Controllers;
  *
  * @author info
  */
-class HomeController extends \Library\Core\Auth
+class HomeController extends TodoController
 {
 
     public function __preDispatch()
@@ -19,12 +19,8 @@ class HomeController extends \Library\Core\Auth
 
     public function indexAction()
     {
-        $this->render('home/index.tpl');
+        $this->oView->render($this->aView, 'home/index.tpl');
     }
 
-}
-
-class TodoControllerException extends \Exception
-{
 }
 
