@@ -63,7 +63,7 @@ meta_description %} {% block js %}
                     </tr>
                 </thead>
                 <tbody id="todoList" class="ui-loadable ui-scroll-loadable overflowY" data-entity="Todo" data-view="todo/list.tpl" data-parameters=""
-                    data-bundle="crud" data-controller="list" data-action="listByUser">
+                    data-bundle="crud" data-controller="list" data-action="index">
                 </tbody>
             </table>
         </div>

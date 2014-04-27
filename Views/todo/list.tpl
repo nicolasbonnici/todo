@@ -1,5 +1,5 @@
 {% if oEntities|Exists %} {% for oTodo in oEntities %}
-<tr {% if oTodo.deadline > current_timestamp %} class="danger blackFontColor"{% endif %}>
+<tr class="ui-item">
     <td><input type="checkbox" class="ui-select todos form-control input-lg" data-delete-selector=".ui-delete-todos" data-select-parent="#todoList" name="idtodo" value="{{oTodo.idtodo}}" /></td>
     <td>
         <h3 class="">
