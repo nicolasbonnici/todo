@@ -58,6 +58,31 @@ class TodoController extends \Library\Core\Auth
         }
         $this->oView->render($this->aView, 'todo/delete.tpl');
     }
+
+    public function listAction($iOffset = 0, $iLoadStep = 10)
+    {
+        try {
+            $oTodoModel = new \bundles\todo\Models\Todo(null, $this->oUser);
+
+            if (isset($this->aParams['ioffset']) && $this->aParams['ioffset'] > 0) {
+                $iOffset = (int) $this->aParams['ioffset'];
+            }
+
+            if (isset($this->aParams['iLoadStep']) && $this->aParams['iLoadStep'] > 0) {
+                $iLoadStep = (int) $this->aParams['iLoadStep'];
+            }
+
+            $aLimit = array($iOffset, $iLoadStep);
+            if ($oTodoModel->load('created', 'DESC', $aLimit)) {
+                $this->aView['iStatus'] = self::XHR_STATUS_OK;
+                $this->aView['oEntities'] = $oTodoModel->getEntities();
+            }
+        } catch (\bundles\crud\Models\CrudModelException $oException) {
+            $this->aView['error_message'] = $oException->getMessage();
+            $this->aView['error_code'] = $oException->getCode();
+        }
+        $this->oView->render($this->aView, 'todo/list.tpl', $this->aView['iStatus']);
+    }
 }
 
 class TodoControllerException extends \Exception

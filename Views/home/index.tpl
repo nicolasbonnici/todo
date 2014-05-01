@@ -43,7 +43,7 @@ meta_description %} {% block js %}
                     <span class="glyphicon glyphicon-file"></span> New todo!
                 </button>
             </div>
-            <table id="todo-last-items" class="table table-responsive">
+            <table id="todo-last-items" class="table table-responsive blackTextShadow">
                 <thead>
                     <tr>
                         <th><input type="checkbox" class="ui-select-all"
@@ -63,7 +63,7 @@ meta_description %} {% block js %}
                     </tr>
                 </thead>
                 <tbody id="todoList" class="ui-loadable ui-scroll-loadable overflowY" data-entity="Todo" data-view="todo/list.tpl" data-parameters=""
-                    data-bundle="crud" data-controller="list" data-action="index">
+                    data-bundle="todo" data-controller="todo" data-action="list">
                 </tbody>
             </table>
         </div>
