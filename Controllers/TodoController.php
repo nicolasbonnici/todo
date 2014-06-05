@@ -62,13 +62,14 @@ class TodoController extends \Library\Core\Auth
     public function listAction($iOffset = 0, $iLoadStep = 10)
     {
         try {
+            $this->aView['iStatus'] = self::XHR_STATUS_ERROR;
             $oTodoModel = new \bundles\todo\Models\Todo(null, $this->oUser);
 
-            if (isset($this->aParams['ioffset']) && $this->aParams['ioffset'] > 0) {
+            if (isset($this->aParams['ioffset']) && intval($this->aParams['ioffset']) > 0) {
                 $iOffset = (int) $this->aParams['ioffset'];
             }
 
-            if (isset($this->aParams['iLoadStep']) && $this->aParams['iLoadStep'] > 0) {
+            if (isset($this->aParams['iLoadStep']) && intval($this->aParams['iLoadStep']) > 0) {
                 $iLoadStep = (int) $this->aParams['iLoadStep'];
             }
 
