@@ -3,7 +3,7 @@
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h1 class="modal-title" id="myModalLabel">
         <a href="#" class="ui-editable" data-type="text" data-tpl="<input type='text'class='input-lg'>"
-            data-entity="Todo" data-name="label" data-pk="{{oTodo.idtodo}}" data-url="/backend/crud/update/">
+            data-entity="Todo" data-name="label" data-pk="{{oTodo.idtodo}}" data-url="/crud/update/">
             {{oTodo.label|safe}} </a>
     </h1>
 </div>

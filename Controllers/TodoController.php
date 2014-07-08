@@ -39,6 +39,9 @@ class TodoController extends \Library\Core\Auth
         $this->oView->render($this->aView, 'todo/read.tpl');
     }
 
+    /**
+     * Just render the update view for a todo the note the update is handle by the crud bundle
+     */
     public function updateAction()
     {
         if (isset($this->aParams['idtodo']) && intval($this->aParams['idtodo']) > 0) {
@@ -51,6 +54,10 @@ class TodoController extends \Library\Core\Auth
         $this->oView->render($this->aView, 'todo/update.tpl');
     }
 
+
+    /**
+     * Just render the delete view for a todo the note the update is handle by the crud bundle
+     */
     public function deleteAction()
     {
         if (isset($this->aParams['pk']) && intval($this->aParams['pk']) > 0) {
