@@ -10,6 +10,8 @@ namespace bundles\todo\Controllers;
  */
 class TodoController extends \Library\Core\Auth
 {
+    protected $sTodoEntityName = '\bundles\todo\Entities\Todo';
+    protected $sTodoEntityCollectionName = '\bundles\todo\Entities\Collection\TodoCollection';
 
     public function __preDispatch()
     {}
@@ -30,7 +32,7 @@ class TodoController extends \Library\Core\Auth
     public function readAction()
     {
         if (isset($this->aParams['idtodo']) && intval($this->aParams['idtodo']) > 0) {
-            $oTodoModel = new \bundles\todo\Models\Todo(intval($this->aParams['idtodo']), $this->oUser);
+            $oTodoModel = new \bundles\todo\Models\TodoModel($this->oUser, intval($this->aParams['idtodo']));
             $oTodo = $oTodoModel->getEntity();
             if (! is_null($oTodo) && $oTodo->isLoaded()) {
                 $this->aView['oTodo'] = $oTodo;
@@ -45,7 +47,7 @@ class TodoController extends \Library\Core\Auth
     public function updateAction()
     {
         if (isset($this->aParams['idtodo']) && intval($this->aParams['idtodo']) > 0) {
-            $oTodoModel = new \bundles\todo\Models\Todo(intval($this->aParams['idtodo']), $this->oUser);
+            $oTodoModel = new \bundles\todo\Models\TodoModel($this->oUser, intval($this->aParams['idtodo']));
             $oTodo = $oTodoModel->getEntity();
             if (! is_null($oTodo) && $oTodo->isLoaded()) {
                 $this->aView['oTodo'] = $oTodo;
@@ -70,7 +72,7 @@ class TodoController extends \Library\Core\Auth
     {
         try {
             $this->aView['iStatus'] = self::XHR_STATUS_ERROR;
-            $oTodoModel = new \bundles\todo\Models\Todo(null, $this->oUser);
+            $oTodoModel = new \bundles\todo\Models\TodoModel($this->oUser);
 
             if (isset($this->aParams['ioffset']) && intval($this->aParams['ioffset']) > 0) {
                 $iOffset = (int) $this->aParams['ioffset'];
